@@ -2,8 +2,17 @@
 
 import operator
 from operator import itemgetter
-import time 
+import time
+import threading
+import sys
+import itertools 
 
+done = False 
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        sys.stdout.write('\rloading ' + c)
+        time.sleep(.1)
+    sys.stdout.write('\rDone!     ')   
 def typer(strToPrint):
     for char in strToPrint:
         print(char, end='',flush=True)
@@ -149,6 +158,7 @@ def main():
             pass
         else:
             typer('\nYour input is invalid.\n\nTerminating program, goodbye!\n\n')
+            return
         typer(q5) 
         a5 = input('\nEnter one of the options below: \n\n 1 - Yes \n 2 - No \n\n')
         if a5 == '1':
@@ -157,14 +167,18 @@ def main():
             pass
         else:
             typer('\nYour input is invalid.\n\nTerminating program, goodbye!\n\n')
+            return
         final_answer = options[0]
         text = '\nWe recommend that the partially homomorphic encryption scheme you use is the {} cryptosystem.\n'
         typer(text.format(final_answer['name']))
         text2 = '\nHere\'s some more details about this scheme: \n - Its cryptographic security level is {}. \n - Its hardness assumption is the {} problem. \n - Its homomorphisms are {}, and its malleability properties are {}. \n - Its efficiency, on our scale from 1-5, is {}. \n\n'
+
         typer(text2.format(final_answer['security'], final_answer['hardness'], final_answer['homomorphism'], final_answer['malleability'], final_answer['efficiency']))
         typer('\nThanks for playing! We hope this was useful. \n\nTerminating program, goodbye!\n\n')
+        return
     elif a1 == '2':
         typer('\nYou should consider a fully homomorphic encryption system. That should provide more flexibility in what you are able to compute over your encrypted data.\n\nTerminating program, goodbye!\n\n')
+        return
     else:
         typer('\nYour input is invalid.\n\nTerminating program, goodbye!\n\n')
         return
