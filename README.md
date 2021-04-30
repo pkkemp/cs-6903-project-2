@@ -23,7 +23,7 @@ Partially Homomorphic Encryption (PHE) systems are notable for supporting a limi
 ### Textbook RSA 
 Textbook RSA is defined as an iteration of RSA (Rivest-Shamir-Adelman) encryption without padding involved. 
 
-Textbook RSA is homomorphic with respect to Product operation. 
+Textbook RSA is homomorphic with respect to Product operations. 
 
 It is a fairly efficient scheme however, it is not the most secure. 
 
@@ -32,7 +32,7 @@ Textbook RSA works for both encryption and also a signature function. This imple
 ### ElGamal 
 ElGamal is an encryption scheme based on the Diffie-Hellman key exchange, and designed in 1985 by Taher Elgamal. 
 
-ElGamal works with respect to Product. 
+ElGamal is homomorphic with respect to Product operations. 
 
 While this scheme is slower than Textbook RSA for purposes of encryption, it has about the same efficiency for decryption. This scheme is also much more secure than Textbook RSA. 
 
