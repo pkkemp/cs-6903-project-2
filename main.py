@@ -118,6 +118,7 @@ def main():
        	elif a2 == '4':
        	    options.append(textbook_rsa)
        	    options.append(el_gamal)
+            options.append(rabin)
        	elif a2 == '5':
        	    options.append(goldwasser_micali)
        	    options.append(benaloh)
@@ -171,7 +172,7 @@ def main():
         final_answer = options[0]
         text = '\nWe recommend that the partially homomorphic encryption scheme you use is the {} cryptosystem.\n'
         typer(text.format(final_answer['name']))
-        text2 = '\nHere\'s some more details about this scheme: \n - Its cryptographic security level is {}. \n - Its hardness assumption is the {} problem. \n - Its homomorphisms are {}, and its malleability properties are {}. \n - Its efficiency, on our scale from 1-5, is {}. \n\n'
+        text2 = '\nHere\'s some more details about this scheme: \n - Its cryptographic security level is {}. \n - Its hardness assumption is the {} problem. \n - Its homomorphisms are {}, and its malleability properties are {}. \n - Its efficiency, on our scale from 1-5 (5 is most efficient), is {}. \n\n'
 
         typer(text2.format(final_answer['security'], final_answer['hardness'], final_answer['homomorphism'], final_answer['malleability'], final_answer['efficiency']))
         typer('\nThanks for playing! We hope this was useful. \n\nTerminating program, goodbye!\n\n')
