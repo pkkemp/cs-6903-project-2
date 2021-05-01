@@ -125,6 +125,7 @@ def main():
        	elif a2 == '6':
        	    options.append(el_gamal)
        	    options.append(rabin)
+            options.append(textbook_rsa)
        	elif a2 == '7':
        	    typer('\nYou should consider a fully homomorphic encryption system. That should provide more flexibility in what you are able to compute over your encrypted data.\n\nTerminating program, goodbye!\n\n')
        	    exit()
