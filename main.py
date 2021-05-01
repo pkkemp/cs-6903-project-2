@@ -134,15 +134,15 @@ def main():
        	    if a3 == '1':
        	        options.append(paillier)
        	        options.append(damgard_jurik)
-       	    if a3 == '2':
+       	    elif a3 == '2':
        	        options.append(textbook_rsa)
        	        options.append(el_gamal)
        	        options.append(rabin)
-       	    if a3 == '3':
+       	    elif a3 == '3':
        	        options.append(goldwasser_micali)
        	        options.append(rabin)
        	        options.append(benaloh)
-       	    if a3 == '4':
+       	    elif a3 == '4':
                 options.append(paillier)
        	        options.append(damgard_jurik)
        	    else:
